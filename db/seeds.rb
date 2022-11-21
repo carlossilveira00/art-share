@@ -5,3 +5,8 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+require 'faker'
+
+20.times do
+  Item.create(name: Faker::Name.name, description: Faker::Quote.famous_last_words, value: rand(0..1000), user_id: 1, current_situation: "available", category: ["paitings", "Sculpture"].sample, location: Faker::Address.city )
+end
