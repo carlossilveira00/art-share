@@ -1,0 +1,40 @@
+<nav class="navbar navbar-light">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <img src="https://cdn.logojoy.com/wp-content/uploads/2018/05/30143717/146.png" alt="" width="60" height="40">
+    </a>
+    <form class="d-flex" role="search" id="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="search-box">
+        <button class="btn" type="submit"><i class="fa-solid fa-magnifying-glass" id="search-button"></i></button>
+      </form>
+    <div style="display:flex;align-items:center;">
+      <%if user_signed_in? %>
+        <li class="nav-item dropdown" style="list-style-type:none;" >
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <%= image_tag "avatar.jpeg", class:"avatar"%>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="navbarDropdownMenuLink" id="dropdown-box">
+              <li><%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class:"dropdown-item"%></li>
+              <li><%= link_to "My Items", new_item_path, class:"dropdown-item" %></li>
+              <li><%= link_to "My Rented Items", new_item_path, class:"dropdown-item" %></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><%= link_to "Start Renting", new_item_path, class:"dropdown-item" %></li>
+            </ul>
+          </li>
+      <%else%>
+        <%= link_to "Become a lessor", new_item_path, id:"lessor-link" %>
+          <li class="nav-item dropdown" style="list-style-type:none;" id="login-icon">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fa-regular fa-user-plus"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="navbarDropdownMenuLink" id="dropdown-box">
+              <li><%= link_to "Log In", new_user_session_path, class:"dropdown-item" %></li>
+              <li><%= link_to "Register", new_user_registration_path, class:"dropdown-item" %></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><%= link_to "Become a lessor", new_item_path, class:"dropdown-item" %></li>
+            </ul>
+          </li>
+      <%end%>
+    </div>
+  </div>
+</nav>
