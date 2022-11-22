@@ -1,0 +1,56 @@
+.carousel-inner {
+  border-radius: 20px;
+}
+
+.card-body {
+  margin-left: 10px;
+}
+
+.col {
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.card-art {
+  height: 400px;
+  width: 75%;
+  margin: auto;
+  margin-bottom: 20px;
+}
+
+.btn-rent {
+	background-color:#1BC579;;
+	border-radius:10px;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:16px;
+	padding:8px 14px;
+	text-decoration:none;
+}
+
+.btn-rent:hover {
+	background-color:#17b16c;
+  color:#ffffff;
+}
+.rbtn-rent:active {
+	position:relative;
+	top:1px;
+}
+
+.card-title {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 6px;
+  margin-top: 6px;
+}
+
+.card-text {
+  font-size: 14px;
+}
+
+.card-price {
+  font-size: 18px;
+}
+
