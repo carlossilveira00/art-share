@@ -3,7 +3,19 @@
     <div class="text m-0 p-0">
       <h2 class="m-0"><%= @item.name %></h2>
     </div>
-    <a href="#" class="btn-rent"><i class="fa-solid fa-share-from-square"></i></a>
+    <div class="d-flex">
+      <% if @item.user == current_user %>
+        <%= link_to item_path(@item), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"btn-rent" do %>
+            <i class="fa-solid fa-trash"></i>
+        <%end%>
+        <%= link_to edit_item_path, class:"btn-rent" do %>
+          <i class="fa-solid fa-pen-to-square"></i>
+        <%end%>
+        <a href="#" class="btn-rent"><i class="fa-solid fa-share-from-square"></i></a>
+      <% else %>
+        <a href="#" class="btn-rent"><i class="fa-solid fa-share-from-square"></i></a>
+      <%end%>
+    </div>
   </div>
 
   <div class="container-photo text-center">
