@@ -19,7 +19,7 @@ class ItemsController < ApplicationController
     authorize @item
 
     if @item.save
-      redirect_to root_path
+      redirect_to item_path(@item)
     else
       render :new, status: :unprocessable_entity
     end
@@ -34,7 +34,7 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
     authorize @item
     @item.update(item_params)
-    redirect_to items_path
+    redirect_to item_path(@item)
   end
 
   def destroy
@@ -48,6 +48,6 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:name, :description, :value, :current_situation, :category, :location)
+    params.require(:item).permit(:name, :description, :value, :current_situation, :category, :location, photos: [])
   end
 end
