@@ -1,9 +1,9 @@
 <div id= "product-page">
-  <div class= "title-bar d-flex justify-content-between">
-    <div class="text">
-      <h1><%= @item.name %></h1>
+  <div class= "title-bar d-flex justify-content-between align-items-center my-3">
+    <div class="text m-0 p-0">
+      <h2 class="m-0"><%= @item.name %></h2>
     </div>
-    <p class= link-share><%= link_to "Share this item" %></p>
+    <a href="#" class="btn-rent"><i class="fa-solid fa-share-from-square"></i></a>
   </div>
 
   <div class="container-photo text-center">
@@ -88,7 +88,11 @@
   </div>
 
   <div class= container-map>
-      <h2> Item's Location</h2>
-      <img src="https://media.istockphoto.com/id/1284922707/pt/foto/3d-map-of-london.jpg?s=1024x1024&w=is&k=20&c=0VxisC2L3H4dr8tfhMc5J6ytNFaE_ztgJnySyd564aY=" class="d-block w-100" alt="Product's Location">
+    <div class="map-div">
+      <h3> Item's Location</h3>
+      <div class="text-center">
+        <img src="https://media.istockphoto.com/id/1284922707/pt/foto/3d-map-of-london.jpg?s=1024x1024&w=is&k=20&c=0VxisC2L3H4dr8tfhMc5J6ytNFaE_ztgJnySyd564aY=" class="map" alt="Product's Location">
+      </div>
+    </div>
   </div>
 </div>

@@ -1,8 +1,15 @@
 .container-map {
   margin-top: 20px;
-  
-  .d-block {
-    border: 1px solid grey;
+  margin-bottom: 20px;
+
+  .map {
     border-radius: 15px;
+    height: 500px;
+    width: 900px;
   }
+}
+
+.map-div {
+  width: 900px;
+  margin: 0 auto;
 }
