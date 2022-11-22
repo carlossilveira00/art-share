@@ -1,6 +1,10 @@
 class ItemsController < ApplicationController
   def index
-    @items = Item.all
+    @items = policy_scope(Item)
+  end
+
+  def show
+    authorize @item
   end
 
   def new
