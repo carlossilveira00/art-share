@@ -3,28 +3,33 @@
   margin-bottom: 30px;
 }
 
-ul {
-  width: 100%;
-  padding-left: 0;
-}
 
-li {
-  list-style: none;
-  display: inline-block;
-  width: calc(100% / 3);
-  height: 20px;
-  text-align: center;
+#index-page{
+  ul {
+    width: 100%;
+    padding-left: 0;
+  }
 
-  a {
-    text-decoration: none;
-    color:black;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-width: var(--chipsbar_chip-width);
-    gap: var(--h-x-sf-jw);
+  li {
+    list-style: none;
+    display: inline-block;
+    width: calc(100% / 3);
+    height: 20px;
+    text-align: center;
+
+    a {
+      text-decoration: none;
+      color:black;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: var(--chipsbar_chip-width);
+      gap: var(--h-x-sf-jw);
+    }
+    a:hover {
+      color: #1BC579;
+    }
   }
-  a:hover {
-    color: #1BC579;
-  }
+
+
 }
