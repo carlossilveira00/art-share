@@ -1,0 +1,66 @@
+.btn-log-in {
+  background-color: #1BC579;
+  color: white;
+  border-radius: 30px;
+  padding: 5px 15px;
+  border: 0px;
+  width: 300px;
+  font-size: large;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+.btn-log-in-other {
+  background-color: white;
+  border-radius: 20px;
+  border-color: rgb(237, 237, 237);
+  border-style: groove;
+  padding: 5px 15px;
+  width: 300px;
+  margin-top: 7px;
+  text-align: center;
+}
+
+.btn-log-in-google {
+  background-color: white;
+  background: asset-url("google_icon.png") no-repeat left;
+  background-position: 12px 8px;
+  border-radius: 20px;
+  border-color: rgb(237, 237, 237);
+  border-style: groove;
+  background-size: 17px;
+  padding: 5px 15px;
+  width: 300px;
+  margin-top: 7px;
+  text-align: center;
+}
+
+.btn-log-in-facebook {
+  background-color: white;
+  background: asset-url("facebook_icon.png") no-repeat left;
+  background-position: 12px 8px;
+  border-radius: 20px;
+  border-color: rgb(237, 237, 237);
+  border-style: groove;
+  background-size: 17px;
+  padding: 5px 15px;
+  width: 300px;
+  margin-top: 7px;
+  text-align: center;
+}
+
+.btn-log-in:hover {
+  background-color: #35e094;
+  transition: 0.15s;
+}
+
+.shared-links {
+  text-decoration: none;
+}
+
+.password-new {
+  text-decoration: none;
+  text-align: center;
+  margin-top: 7px;
+  display: grid;
+}
