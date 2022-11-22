@@ -1,0 +1,62 @@
+.profile-page {
+  margin-left: 100px;
+  margin-right: 100px;
+  padding-top: 25px;
+}
+
+.profile-card {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 15px;
+  padding: 20px;
+  height: 350px;
+
+  .users-info{
+    padding-top: 30px;
+    padding-left: 10px;
+    p:hover {
+      color: #1BC579;
+    }
+  }
+
+  .user-record{
+    padding-top: 30px;
+  }
+
+  .img-profile {
+    height: 120px;
+    width: 120px;
+    .avatar {
+    height: 100%;
+    width: 100%;
+    }
+  }
+}
+
+.profile-items {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 15px;
+  padding: 20px;
+  height: 600px;
+  width: 800px;
+
+  .categories-row{
+    padding: 4px;
+    padding-top: 10px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid grey;
+    p {
+      border-radius: 20px;
+      background-color: #1BC579;
+      color: white;
+      padding: 3px;
+    }
+  }
+
+  .info-row {
+    padding-top: 15px;
+  }
+
+  .table-info {
+    padding: 8px;
+  }
+  }
