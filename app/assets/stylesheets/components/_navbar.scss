@@ -1,7 +1,33 @@
+.navbar{
+
+}
+
 #lessor-link{
   text-decoration: none;
   color: #0C0910;
   margin-right: 24px;
+}
+
+#lessor-link:hover{
+  border: 1px solid #D7D7D7;
+  border-radius: 20px;
+  background-color: #F4F4F4;
+  padding: 8px;
+}
+
+#dropdown-box{
+  background-color: #F4F4F4;
+  color: #0C0910;
+  border-radius: 10px;
+}
+
+#login-icon{
+    border: 1px solid #D7D7D7;
+    border-radius: 20px;
+    background-color: #F4F4F4;
+    padding: 8px;
+}
+
 }
 
 #lessor-link:hover{
@@ -42,3 +68,15 @@
   border-radius: 50%;
   padding:5px;
 }
+
+#search-box{
+  border: none;
+}
+
+#search-button:hover{
+  color:white;
+  background-color: #0C0910;
+  border-radius: 50%;
+  padding:5px;
+}
+

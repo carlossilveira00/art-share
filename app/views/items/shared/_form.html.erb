@@ -1,0 +1,9 @@
+<%= simple_form_for @item do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description, :as => :text, :input_html => { 'rows' => 10} %>
+  <%= f.input :value %>
+  <%= f.input :current_situation, :as => :hidden, :input_html => { :value => "pending" } %>
+  <%= f.input :category, collection: ["Paintings", "Sculptures", "Drawings", "Ceramics", "Photography", "Crafts"] %>
+  <%= f.input :location %>
+  <%= f.button :submit %>
+<% end %>
