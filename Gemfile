@@ -6,6 +6,9 @@ ruby "3.1.2"
 # Devise gem for authentication
 gem 'devise'
 
+# Pundit gem for authorization
+gem "pundit"
+
 #Faker gem to generate items.
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'main'
 
