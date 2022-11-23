@@ -6,6 +6,9 @@ ruby "3.1.2"
 # Cloudinary gem for cloud storage
 gem "cloudinary"
 
+# Geocoder to transform locations to coordinates
+gem "geocoder"
+
 # Devise gem for authentication
 gem 'devise'
 

@@ -17,3 +17,12 @@ h1{
   font-family: sans-serif;
   font-size: 48px;
 }
+
+
+.mapboxgl-ctrl-geocoder {
+  max-width: none;
+  width: 100%;
+  border: 1px solid lightgrey;
+  box-shadow: none;
+  background-color: transparent;
+}
