@@ -6,6 +6,12 @@ class ItemsController < ApplicationController
   def show
     @item = Item.find(params[:id])
     authorize @item
+    @markers = @item.geocode.map do |_item|
+      {
+        lat: @item.latitude,
+        lng: @item.longitude
+      }
+    end
   end
 
   def new
@@ -48,6 +54,6 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:name, :description, :value, :current_situation, :category, :location, photos: [])
+    params.require(:item).permit(:name, :description, :value, :current_situation, :category, :address, photos: [])
   end
 end
