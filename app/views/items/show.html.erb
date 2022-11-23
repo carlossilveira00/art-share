@@ -3,28 +3,28 @@
     <div class="text m-0 p-0">
       <h2 class="m-0"><%= @item.name %></h2>
     </div>
-    <a href="#" class="btn-rent"><i class="fa-solid fa-share-from-square"></i></a>
+    <div class="d-flex">
+      <% if @item.user == current_user %>
+        <%= link_to item_path(@item), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"btn-rent" do %>
+            <i class="fa-solid fa-trash"></i>
+        <%end%>
+        <%= link_to edit_item_path, class:"btn-rent" do %>
+          <i class="fa-solid fa-pen-to-square"></i>
+        <%end%>
+        <a href="#" class="btn-rent"><i class="fa-solid fa-share-from-square"></i></a>
+      <% else %>
+        <a href="#" class="btn-rent"><i class="fa-solid fa-share-from-square"></i></a>
+      <%end%>
+    </div>
   </div>
 
   <div class="container-photo text-center">
     <div class="row">
-      <div class="col">
-        <img src="https://plus.unsplash.com/premium_photo-1664438942574-e56510dc5ce5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1742&q=80" class="d-block w-100" alt="Product's image">
-      </div>
-      <div class="col">
-        <img src="https://plus.unsplash.com/premium_photo-1664438942574-e56510dc5ce5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1742&q=80" class="d-block w-100" alt="Product's image">
-      </div>
-    </div>
-    <div class="row">
-      <div class="col">
-        <img src="https://plus.unsplash.com/premium_photo-1664438942574-e56510dc5ce5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1742&q=80" class="d-block w-100" alt="Product's image">
-      </div>
-      <div class="col">
-        <img src="https://plus.unsplash.com/premium_photo-1664438942574-e56510dc5ce5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1742&q=80" class="d-block w-100" alt="Product's image">
-      </div>
-      <div class="col">
-        <img src="https://plus.unsplash.com/premium_photo-1664438942574-e56510dc5ce5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1742&q=80" class="d-block w-100" alt="Product's image">
-      </div>
+      <% @item.photos.each do |photo| %>
+        <div class="col-4">
+          <%= cl_image_tag photo.key, class:"d-block w-100 m-3", style:"box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;", height: 200, width: 300, crop: :fill %>
+        </div>
+      <% end %>
     </div>
   </div>
 

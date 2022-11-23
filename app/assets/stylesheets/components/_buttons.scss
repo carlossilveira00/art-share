@@ -8,6 +8,7 @@
   font-size: large;
   font-weight: 500;
   margin-bottom: 15px;
+  align-self: center;
 }
 
 .btn-log-in-other {
@@ -51,16 +52,19 @@
 
 .btn-log-in:hover {
   background-color: #35e094;
+  color: white;
   transition: 0.15s;
-}
-
-.shared-links {
-  text-decoration: none;
 }
 
 .password-new {
   text-decoration: none;
   text-align: center;
-  margin-top: 7px;
+  margin-top: 10px;
   display: grid;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }

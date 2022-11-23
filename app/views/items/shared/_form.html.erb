@@ -1,9 +1,28 @@
 <%= simple_form_for @item do |f| %>
-  <%= f.input :name %>
-  <%= f.input :description, :as => :text, :input_html => { 'rows' => 10} %>
-  <%= f.input :value %>
+  <%= f.input :name,
+                  required: true,
+                  autofocus: true %>
+  <%= f.input :description,
+                  required: true,
+                  autofocus: true,
+                  :as => :text, :input_html => { 'rows' => 10} %>
+  <%= f.input :photos,
+                  required: true,
+                  autofocus: true,
+                  as: :file, input_html: { multiple: true } %>
+  <p><small>Max of 10M</small><p>
+  <%= f.input :value,
+                  required: true,
+                  autofocus: true %>
   <%= f.input :current_situation, :as => :hidden, :input_html => { :value => "pending" } %>
-  <%= f.input :category, collection: ["Paintings", "Sculptures", "Drawings", "Ceramics", "Photography", "Crafts"] %>
-  <%= f.input :location %>
-  <%= f.button :submit %>
+  <%= f.input :category,
+                  required: true,
+                  autofocus: true,
+                  collection: ["Paintings", "Sculptures", "Drawings", "Ceramics", "Photography", "Crafts"] %>
+  <%= f.input :location,
+                  required: true,
+                  autofocus: true %>
+  <div class="button-container">
+    <%= f.button :submit, class: "btn-log-in text-center"%>
+  </div>
 <% end %>
