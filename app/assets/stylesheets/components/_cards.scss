@@ -53,6 +53,7 @@
 
 .card-price {
   font-size: 18px;
+  margin-top: 5px;
 }
 
 .login-card {
@@ -69,4 +70,13 @@
   padding: 25px 30px;
   border-radius: 20px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+ }
+
+ .clickable-cards {
+  color: black;
+  text-decoration: none;
+ }
+ .clickable-cards:hover {
+  color: black;
+  text-decoration: none;
  }

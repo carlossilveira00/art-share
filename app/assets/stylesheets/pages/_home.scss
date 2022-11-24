@@ -1,1 +1,10 @@
 // Specific CSS for your home-page
+.btn {
+  color: white;
+}
+
+.second-btn {
+  .btn{
+    color: black;
+  }
+}

@@ -1,3 +1,9 @@
+.btn {
+  color: white;
+  font-size: x-large;
+  font-weight: 500;
+}
+
 .btn-log-in {
   background-color: #1BC579;
   color: white;
@@ -9,17 +15,34 @@
   font-weight: 500;
   margin-bottom: 15px;
   align-self: center;
+  text-decoration: none;
+}
+
+.btn-edit {
+  background-color: #1BC579;
+  color: white;
+  border-radius: 30px;
+  padding: 5px 25px;
+  border: 0px;
+  width: 220px;
+  font-size: large;
+  font-weight: 500;
+  margin-top: 25px;
+  text-decoration: none;
+  margin-left: 40px;
 }
 
 .btn-log-in-other {
   background-color: white;
   border-radius: 20px;
-  border-color: rgb(237, 237, 237);
   border-style: groove;
+  color:black;
+  border-color: rgb(237, 237, 237);
   padding: 5px 15px;
   width: 300px;
   margin-top: 7px;
   text-align: center;
+  text-decoration: none;
 }
 
 .btn-log-in-google {
@@ -50,6 +73,21 @@
   text-align: center;
 }
 
+.btn-log-in-other:hover {
+  color: black;
+}
+.btn-edit:hover {
+  background-color: #35e094;
+  color: white;
+  transition: 0.15s;
+}
+
+.btn:hover {
+  background-color: #35e094;
+  color: white;
+  transition: 0.15s;
+}
+
 .btn-log-in:hover {
   background-color: #35e094;
   color: white;
@@ -67,4 +105,10 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
+}
+
+.btn-cancel {
+  margin-top: 50px;
+  color: rgb(180, 180, 180);
+  text-decoration: none;
 }

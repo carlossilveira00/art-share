@@ -8,10 +8,10 @@
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   border-radius: 15px;
   padding: 20px;
-  height: 350px;
+  height: min-content;
 
   .my-info{
-    height: 300px;
+    height: min-content;
     width: 120px;
     p{
       width: 300px;
@@ -60,13 +60,13 @@
       padding-left: 15px;
       padding-right: 15px;
     }
-  }
 
-  .info-row {
-    padding-top: 15px;
-  }
+    .info-row {
+      padding-top: 15px;
+    }
 
-  .table-info {
-    padding: 8px;
+    .table-info {
+      padding: 8px;
+    }
   }
-  }
+}
