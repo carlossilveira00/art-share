@@ -15,6 +15,21 @@
   font-weight: 500;
   margin-bottom: 15px;
   align-self: center;
+  text-decoration: none;
+}
+
+.btn-edit {
+  background-color: #1BC579;
+  color: white;
+  border-radius: 30px;
+  padding: 5px 25px;
+  border: 0px;
+  width: 220px;
+  font-size: large;
+  font-weight: 500;
+  margin-top: 25px;
+  text-decoration: none;
+  margin-left: 40px;
 }
 
 .btn-log-in-other {
@@ -60,6 +75,11 @@
 
 .btn-log-in-other:hover {
   color: black;
+}
+.btn-edit:hover {
+  background-color: #35e094;
+  color: white;
+  transition: 0.15s;
 }
 
 .btn:hover {
