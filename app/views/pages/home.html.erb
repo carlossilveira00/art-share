@@ -1,13 +1,14 @@
 <div>
-  <div style="box-shadow: 0px 10px 10px -15px #111;padding-bottom: 20px;">
-      <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1547891654-e66ed7ebb968?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80);">
-        <div class="container text-center">
-          <h1>Rent and lend easy from the comfort of your home!</h1>
-          <p>We connect you to the best in the area, so you can give a new look to your place anytime you want!</p>
-          <a class="btn btn-success" href="/items">Join now</a>
-        </div>
-      </div>
 
+    <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1547891654-e66ed7ebb968?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80);">
+      <div class="container text-center">
+         <h1>Rent and lend easy from the comfort of your home!</h1>
+        <p>We connect you to the best in the area, so you can give a new look to your place anytime you want!</p>
+        <a class="btn btn-success" href="/items">Join now</a>
+      </div>
+    </div>
+
+    <div style="border-bottom: 1px solid rgb(184, 184, 184);padding-bottom:15px;margin-left: 20px;margin-right: 20px;">
       <div class="container d-flex" style="justify-content:space-between;">
         <div style="width:350px;margin-left:30px;">
           <h3>Spruce up your next event</h3>
@@ -28,7 +29,7 @@
   </div>
 
   <div>
-    <div class="row row-cols-1 row-cols-md-4 g-4" style="display:flex; justify-content:space-around;padding:50px 80px 50px 80px;box-shadow:0px 10px 10px -15px #111;">
+    <div class="row row-cols-1 row-cols-md-4 g-4" style="display:flex; justify-content:space-around;padding:20px 80px 80px;border-bottom: 1px solid rgb(184, 184, 184);padding-bottom:15px;margin-left: 20px;margin-right: 20px;">
       <% @items.each do |item|%>
         <%= link_to item_path(item), class: "clickable-cards" do %>
           <div class="col" >
