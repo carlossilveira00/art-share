@@ -5,6 +5,7 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
+    @reservation = Reservation.new
     authorize @item
     @markers = @item.geocode.map do |_item|
       {
