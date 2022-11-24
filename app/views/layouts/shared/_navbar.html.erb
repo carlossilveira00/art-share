@@ -17,7 +17,7 @@
             <ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="navbarDropdownMenuLink" id="dropdown-box">
               <li><%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class:"dropdown-item"%></li>
               <li><%= link_to "My Profile", profile_path, class:"dropdown-item" %></li>
-              <li><%= link_to "My Rented Items", profile_path, class:"dropdown-item" %></li>
+              <li><%= link_to "My Items for Rent", profile_path, class:"dropdown-item" %></li>
               <li><hr class="dropdown-divider"></li>
               <li><%= link_to "Start Renting", new_item_path, class:"dropdown-item" %></li>
             </ul>

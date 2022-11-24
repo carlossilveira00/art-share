@@ -18,6 +18,10 @@
                     required: true,
                     autofocus: true,
                     input_html: { autocomplete: "email" }%>
+        <%= f.input :description,
+                    required: true,
+                    autofocus: true,
+                    input_html: { autocomplete: "description" }%>
         <%= f.input :password,
                     required: true,
                     hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
@@ -30,7 +34,7 @@
     <div class="form-actions text-center">
       <input class="btn-log-in" type="submit" value="Create Account">
       <%= "_______________ or _______________" %>
-      <input class="btn-log-in-other" type="submit" value="I have an account">
+      <a class="btn-log-in-other" type='button' href="/users/sign_in">I have an account</a>
       <input class="btn-log-in-google"  type="submit" value="Continue with Google">
       <input class="btn-log-in-facebook" type="submit" value="Continue with Facebook">
     </div>
