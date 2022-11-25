@@ -70,3 +70,33 @@
     }
   }
 }
+
+.rented-items{
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 15px;
+  padding: 20px;
+
+  .categories-row{
+    padding: 4px;
+    padding-top: 10px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid grey;
+    p {
+      border-radius: 20px;
+      background-color: #1BC579;
+      color: white;
+      padding: 3px;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+
+    .info-row {
+      padding-top: 15px;
+    }
+
+    .table-info {
+      padding: 8px;
+    }
+  }
+
+}

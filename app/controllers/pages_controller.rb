@@ -7,4 +7,8 @@ class PagesController < ApplicationController
     @user = current_user
     @items = Item.where(user_id: @user.id)
   end
+
+  def rented
+    @reservations = Reservation.where(user_id: current_user.id)
+  end
 end
