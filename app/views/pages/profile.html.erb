@@ -1,7 +1,13 @@
 <div class="profile-page d-flex justify-content-between">
   <div class="profile-card" style= "position: -webkit-sticky; position: sticky; top: var(--navigation-bar-offset, 90px) !important;">
     <div class="id-info d-flex justify-content-between">
-      <div class="img-profile"><%= image_tag "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80", class:"avatar"%></div>
+      <div class="img-profile">
+        <% if current_user.photo.attached?%>
+          <%= cl_image_tag current_user.photo.key, class:"avatar", crop: :fill %>
+      <% else %>
+          <%= image_tag "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__480.png", class:"avatar"%>
+        <%end%>
+      </div>
       <div class="users-info">
         <h3> Hi, I'm <%= current_user.first_name %></h3>
         <p><%= @user.email %></p>
@@ -11,8 +17,7 @@
       <p class="text-center">Your info:</p>
       <div class= "my-info text-center">
         <p>
-        <%# <%= current_user.description %>
-        In pretium condimentum quam, eu pellentesque nisi dictum eu. In id leo ac quam convallis lobortis nec efficitur metus.
+        <%= current_user.description %>
         </p>
         <a class="btn-edit text-center" type='button' href="/users/edit">Update Profile</a>
       </div>
