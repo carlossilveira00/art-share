@@ -17,6 +17,9 @@
       <%= f.input :email,
                   autofocus: true,
                   input_html: { autocomplete: "email" }%>
+      <%= f.input :photos,
+                  autofocus: true,
+                  as: :file, input_html: { multiple: false } %>
       <%= f.input :description,
                   autofocus: true,
                   input_html: { autocomplete: "description" }%>
