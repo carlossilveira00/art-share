@@ -4,7 +4,7 @@
       <div class="img-profile">
         <% if current_user.photo.attached?%>
           <%= cl_image_tag current_user.photo.key, class:"avatar", crop: :fill %>
-      <% else %>
+        <% else %>
           <%= image_tag "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__480.png", class:"avatar"%>
         <%end%>
       </div>
@@ -25,47 +25,25 @@
   </div>
   <div class="profile-items">
     <div class="categories-row d-flex justify-content-between">
-      <p class="1" style="margin-left: 130px;">Item ID</p>
-      <p class="2" style="margin-right: 4px;">Rental Date</p>
+      <p class="1" style="margin-left: 130px;">Item Name</p>
+      <p class="2" style="margin-right: 4px;">Category</p>
       <p class="3" style="margin-right: 12px;">Price</p>
       <p class="4">Status</p>
     </div>
     <div class="info-row" style="margin-right: 10px; margin-top: 20px;">
-      <div class="table-info d-flex justify-content-between">
-        <%= image_tag "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80", class:"avatar"%>
-        <p>Item ID</p>
-        <p>10/09-20/09</p>
-        <p>$248</p>
-        <p>On Going</p>
-      </div>
-      <div class="table-info d-flex justify-content-between">
-        <%= image_tag "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80", class:"avatar"%>
-        <p>Item ID</p>
-        <p>10/09-20/09</p>
-        <p>$248</p>
-        <p>On Going</p>
-      </div>
-      <div class="table-info d-flex justify-content-between">
-        <%= image_tag "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80", class:"avatar"%>
-        <p>Item ID</p>
-        <p>10/09-20/09</p>
-        <p>$248</p>
-        <p>On Going</p>
-      </div>
-      <div class="table-info d-flex justify-content-between">
-        <%= image_tag "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80", class:"avatar"%>
-        <p>Item ID</p>
-        <p>10/09-20/09</p>
-        <p>$248</p>
-        <p>On Going</p>
-      </div>
-      <div class="table-info d-flex justify-content-between">
-        <%= image_tag "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80", class:"avatar"%>
-        <p>Item ID</p>
-        <p>10/09-20/09</p>
-        <p>$248</p>
-        <p>On Going</p>
-      </div>
+      <% @items.each do |item|%>
+        <div class="col table-info d-flex justify-content-between">
+          <% if current_user.photo.attached?%>
+            <%= cl_image_tag current_user.photo.key, class:"avatar", crop: :fill %>
+          <% else %>
+            <%= image_tag "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__480.png", class:"avatar"%>
+          <%end%>
+          <p><%= item.name %></p>
+          <p><%= item.category %></p>
+          <p><%= item.value %></p>
+          <p><%= item.current_situation%></p>
+        </div>
+      <%end%>
     </div>
   </div>
 </div>
