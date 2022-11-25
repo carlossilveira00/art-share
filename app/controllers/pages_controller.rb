@@ -5,5 +5,6 @@ class PagesController < ApplicationController
 
   def profile
     @user = current_user
+    @items = Item.where(user_id: @user.id)
   end
 end
