@@ -6,13 +6,11 @@
     <div class="d-flex">
       <% if @item.user == current_user %>
         <%= link_to item_path(@item), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"btn-rent" do %>
-            <i class="fa-solid fa-trash"></i>
+          <i class="fa-solid fa-trash"></i>
         <%end%>
-
         <%= link_to edit_item_path, class:"btn-rent" do %>
           <i class="fa-solid fa-pen-to-square"></i>
         <%end%>
-
         <a href="#" class="btn-rent"><i class="fa-solid fa-share-from-square"></i></a>
       <% else %>
         <a href="#" class="btn-rent"><i class="fa-solid fa-share-from-square"></i></a>
@@ -21,97 +19,84 @@
   </div>
 
   <div class="photo-details-info d-flex justify-content-between">
-      <div class="left-side">
-        <div id="container-photos" class="carousel slide" data-bs-ride="true" style= "height: 500px;">
-          <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-          </div>
-          <div class="carousel-inner">
-            <% @item.photos.each do |photo| %>
-              <div class="carousel-item active">
-                <%= cl_image_tag photo.key, class:"d-block w-100", height: 200, width: 300, crop: :fill %>
-              </div>
-            <% end %>
-          </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
+    <div class="left-side">
+      <div id="container-photos" class="carousel slide" data-bs-ride="true" style= "height: 500px;">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
-
-        <div class= "container-details d-flex justify-content-between">
-        
-          <div class="container-info d-flex justify-content-between">
-          
-            <div class="item-info">
-              <h3>Item's info</h3>
-              <p><%= @item.description %></p>
+        <div class="carousel-inner">
+          <% @item.photos.each do |photo| %>
+            <div class="carousel-item active">
+              <%= cl_image_tag photo.key, class:"d-block w-100", height: 200, width: 300, crop: :fill %>
             </div>
-            
-            <div class="lessor-info">
-              <h3>Lessor's info</h3>
-              <p>
+          <% end %>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      <div class= "container-details d-flex justify-content-between">
+        <div class="container-info d-flex justify-content-between">
+          <div class="item-info">
+            <h3>Item's info</h3>
+            <p><%= @item.description %> In pretium condimentum quam, eu pellentesque nisi dictum eu. In id leo ac quam convallis lobortis nec efficitur metus.In pretium condimentum quam, eu pellentesque nisi dictum eu. In id leo ac quam convallis lobortis nec efficitur metus.</p>
+          </div>
+          <div class="lessor-info">
+            <h3>Lessor's info</h3>
+            <p>
               <%# <%= @lessor.info %>
               In pretium condimentum quam, eu pellentesque nisi dictum eu. In id leo ac quam convallis lobortis nec efficitur metus. Maecenas a orci eget felis luctus elementum. Maecenas consectetur ornare erat aliquam molestie. Donec vulputate neque augue, vel malesuada enim pulvinar eu. Duis quis sem justo. Suspendisse a commodo tellus.
-              </p>
-            </div>
-            
+            </p>
           </div>
-          
         </div>
       </div>
-
     </div>
-      <div class="right-side">
-        <div class="container-book" style= "position: -webkit-sticky; position: sticky; top: var(--navigation-bar-offset, 90px) !important;;">
-          <div class="date">
-          
-            <div class="input-date d-flex justify-content-between" data-controller="flatpickr">
-            
+    <div class="right-side">
+      <div class="container-book" style= "position: -webkit-sticky; position: sticky; top: var(--navigation-bar-offset, 90px) !important;;">
+        <div class="date">
+          <div class="input-date d-flex justify-content-between" data-controller="flatpickr">
             <div class="begin-date text-center">
-          
-            <%= simple_form_for @reservation, data: { controller: 'flatpickr' } do |f| %>
-              <%= f.input :pickup_date, as: :string, input_html: { data: { flatpickr_target: "startTime" } } %>
-              <%= f.input :drop_date, as: :string, input_html: { data: { flatpickr_target: "endTime" } } %>
-              <%= f.input :total_value, as: :hidden, input_html: { data: { flatpickr_target: "finalValue" } } %>
-
-              <div class="total-date text-center">
-                <p class="text">Total days</p>
-                <p data-flatpickr-target="daysLeft" value="3">0</p>
-              </div>
-
-              <div class="price">
-                <div class= "daily-price d-flex justify-content-between">
-                  <p class="text">Daily price:</p>
-                  <p data-flatpickr-target="itemValue">$<%= @item.value %></p>
+              <%= simple_form_for @reservation, data: { controller: 'flatpickr' } do |f| %>
+                <div class="calculation-div">
+                  <%= f.input :pickup_date, as: :string, input_html: { data: { flatpickr_target: "startTime" } } %>
+                  <%= f.input :drop_date, as: :string, input_html: { data: { flatpickr_target: "endTime" } } %>
+                  <%= f.input :total_value, as: :hidden, input_html: { data: { flatpickr_target: "finalValue" } } %>
                 </div>
 
-                <div class= "total-price d-flex justify-content-between">
-                  <p class="text">Total price:</p>
-                  <p data-flatpickr-target="totalValue">$<%= @item.value %></p>
-                 </div>
-                 
-              </div>
+                <div class="total-date text-center">
+                  <p class="text">Total days</p>
+                  <p data-flatpickr-target="daysLeft" value="3">0</p>
+                </div>
 
-              <%= f.input :item_id, as: :hidden, input_html: { value: @item.id } %>
-              <%= f.input :user_id, as: :hidden, input_html: { value: current_user.id } %>
-              <%= f.submit 'Book', data: { turbo_confirm: "Are you sure you want to book this item?"}, class: "btn", style:"padding: 10px 60px;background-color:#1BC579;color:white;border-radius:20px;"%>
-            <% end %>
-          </div>
+                <div class="price">
+                  <div class= "daily-price d-flex justify-content-between">
+                    <p class="text">Daily price:</p>
+                    <p data-flatpickr-target="itemValue">$<%= @item.value %></p>
+                  </div>
 
-              
+                  <div class= "total-price d-flex justify-content-between">
+                    <p class="text">Total price:</p>
+                    <p data-flatpickr-target="totalValue">$<%= @item.value %></p>
+                  </div>
+                </div>
+
+                <%= f.input :item_id, as: :hidden, input_html: { value: @item.id } %>
+                <%= f.input :user_id, as: :hidden, input_html: { value: current_user.id } %>
+                <%= f.submit 'Book', data: { turbo_confirm: "Are you sure you want to book this item?"}, class: "btn", style:"background-color:#1BC579; color:white; border-radius: 40px; padding: 1px 80px; margin-bottom: 10px;"%>
+              <% end %>
             </div>
           </div>
         </div>
       </div>
-
-
+    </div>
+  </div>
   <div class= container-map>
     <div class="map-div">
       <h3 class="text-center"> Item's Location</h3>
