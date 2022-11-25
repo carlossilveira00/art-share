@@ -1,6 +1,12 @@
 class ItemsController < ApplicationController
   def index
     @items = policy_scope(Item)
+    if params[:query].present?
+      sql_query = "name ILIKE :query OR category ILIKE :query"
+      @items = Item.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @items = Item.all
+    end
   end
 
   def show
