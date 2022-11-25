@@ -3,10 +3,17 @@
     <a class="navbar-brand" href="/items">
       <img src="https://res.cloudinary.com/djn023to9/image/upload/v1669213301/development/artshare_logo_clean_zgbqby.png" alt="" width="60" height="40">
     </a>
-    <form class="d-flex" role="search" id="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="search-box">
-        <button class="btn" type="submit"><i class="fa-solid fa-magnifying-glass" id="search-button"></i></button>
-      </form>
+    <%= form_with url: items_path, method: :get, class: "d-flex", id:"search" do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Find a piece of art..."
+      %>
+      <%= button_tag type: 'submit', class:"btn-search" do %>
+        <i class="fa-solid fa-magnifying-glass"></i>
+      <% end %>
+    <% end %>
+
     <div style="display:flex;align-items:center;">
       <%if user_signed_in? %>
         <p style="margin: auto 15px;"><%= current_user.first_name%> <%= current_user.last_name%></p>

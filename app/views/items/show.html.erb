@@ -17,7 +17,6 @@
       <%end%>
     </div>
   </div>
-
   <div class="photo-details-info d-flex justify-content-between">
     <div class="left-side">
       <div id="container-photos" class="carousel slide" data-bs-ride="true" style= "height: 500px;">
@@ -69,24 +68,20 @@
                   <%= f.input :drop_date, as: :string, input_html: { data: { flatpickr_target: "endTime" } } %>
                   <%= f.input :total_value, as: :hidden, input_html: { data: { flatpickr_target: "finalValue" } } %>
                 </div>
-
                 <div class="total-date text-center">
                   <p class="text">Total days</p>
                   <p data-flatpickr-target="daysLeft" value="3">0</p>
                 </div>
-
                 <div class="price">
                   <div class= "daily-price d-flex justify-content-between">
                     <p class="text">Daily price:</p>
                     <p data-flatpickr-target="itemValue">$<%= @item.value %></p>
                   </div>
-
                   <div class= "total-price d-flex justify-content-between">
                     <p class="text">Total price:</p>
                     <p data-flatpickr-target="totalValue">$<%= @item.value %></p>
                   </div>
                 </div>
-
                 <%= f.input :item_id, as: :hidden, input_html: { value: @item.id } %>
                 <%= f.input :user_id, as: :hidden, input_html: { value: current_user.id } %>
                 <%= f.submit 'Book', data: { turbo_confirm: "Are you sure you want to book this item?"}, class: "btn", style:"background-color:#1BC579; color:white; border-radius: 40px; padding: 1px 80px; margin-bottom: 10px;"%>
