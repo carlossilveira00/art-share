@@ -2,23 +2,25 @@
 <h1>My Rented Items</h1>
   <div class="rented-items" >
     <div class="categories-row d-flex justify-content-between">
-      <p class="1" style="margin-left: 230px;">Item Name</p>
-      <p class="2" style="margin-left: 112px;">Date</p>
-      <p class="3" style="margin-left: 90px;">Total Price</p>
-      <p class="4" style="margin-right: 20px;">Status</p>
+      <p class="1" style="margin-left: 216px;">Item Name</p>
+      <p class="2" style="margin-right: 4px;">Date</p>
+      <p class="3" style="margin-right: 0px;">Total Price</p>
+      <p class="4" style="margin-right: 41px;">Status</p>
     </div>
     <div class="info-row" style="margin-right: 10px; margin-top: 20px;">
       <% @reservations.each do |reservation|%>
         <div class="col table-info d-flex justify-content-between">
-          <% if User.find(reservation.user_id).photo.attached?%>
-            <%= cl_image_tag User.find(reservation.user_id).photo.key, class:"avatar", crop: :fill %>
-          <% else %>
-            <%= image_tag "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__480.png", class:"avatar"%>
-          <%end%>
-          <p><%= item_name = Item.find(reservation.item_id).name %></p>
-          <p><%= reservation.pickup_date %> - <%= reservation.drop_date %></p>
-          <p>$<%= reservation.total_value%></p>
-          <p><%= reservation.status %></p>
+          <div style="width:40px;">
+            <% if User.find(reservation.user_id).photo.attached?%>
+              <%= cl_image_tag User.find(reservation.user_id).photo.key, class:"avatar", crop: :fill %>
+            <% else %>
+              <%= image_tag "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__480.png", class:"avatar"%>
+            <%end%>
+          </div>
+          <p style="width:110px;"><%= item_name = Item.find(reservation.item_id).name %></p>
+          <p style="width:110px;"><%= reservation.pickup_date %> - <%= reservation.drop_date %></p>
+          <p style="width:110px;">$<%= reservation.total_value%></p>
+          <p style="width:110px;"><%= reservation.status %></p>
         </div>
       <%end%>
     </div>
