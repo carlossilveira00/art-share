@@ -27,10 +27,8 @@
       </div>
     </div>
   </div>
-
-
-  <div class="container" style="justify-content:space-between;">
-    <div class="row" style="box-shadow:0px 10px 10px -15px #111;">
+  <div class="container d-flex" style="justify-content:space-between">
+    <div class="row d-flex" style="box-shadow:0px 10px 10px -15px #111;">
       <% @items.each do |item|%>
         <%= link_to item_path(item), class: "clickable-cards" do %>
           <div class="col" >
