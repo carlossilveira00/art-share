@@ -22,24 +22,25 @@
   border-radius: 20px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 
-  .text {
-    color: grey;
+  .input-date{
+    margin-left: 15px;
   }
 
-  .date {
-    border-bottom: 1px solid grey;
+  .calculation-div {
+    #reservation_pickup_date{
+      border-radius: 20px;
+    }
+    #reservation_drop_date{
+      border-radius: 20px;
+    }
+    .btn {
+      border-radius: 40px;
+      padding: 3px 80px;
+    }
 
-  }
-  .input-date {
-    border-bottom: 1px solid grey;
-  }
-  .total-date {
-    padding: 10px;
-  }
-
-  .price {
-    margin-top: 10px;
-    align-items: center;
+    .total-date {
+      border-bottom: 1px solid grey;
+    }
   }
 }
 
