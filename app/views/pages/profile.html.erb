@@ -25,23 +25,18 @@
   </div>
   <div class="profile-items">
     <div class="categories-row d-flex justify-content-between">
-      <p class="1" style="margin-left: 130px;">Item Name</p>
-      <p class="2" style="margin-right: 4px;">Category</p>
-      <p class="3" style="margin-right: 12px;">Price</p>
-      <p class="4">Status</p>
+      <p class="1">Item Name</p>
+      <p class="2" style="margin-right:10px;">Category</p>
+      <p class="3" style="margin-right:18px;">Price</p>
+      <p class="4" style="margin-right:44px;">Status</p>
     </div>
     <div class="info-row" style="margin-right: 10px; margin-top: 20px;">
       <% @items.each do |item|%>
-        <div class="col table-info d-flex justify-content-between">
-          <% if current_user.photo.attached?%>
-            <%= cl_image_tag current_user.photo.key, class:"avatar", crop: :fill %>
-          <% else %>
-            <%= image_tag "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__480.png", class:"avatar"%>
-          <%end%>
-          <p><%= item.name %></p>
-          <p><%= item.category %></p>
-          <p><%= item.value %></p>
-          <p><%= item.current_situation%></p>
+        <div class="col table-info d-flex justify-content-between text-center">
+          <p style="overflow:scroll;height: 25px; width:110px;"><%= item.name %></p>
+          <p style="width:110px;"><%= item.category %></p>
+          <p style="width:110px;"><%= item.value %></p>
+          <p style="width:110px;"><%= item.current_situation%></p>
         </div>
       <%end%>
     </div>
