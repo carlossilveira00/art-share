@@ -41,16 +41,6 @@
     </ul>
   </div>
 
-  <div id="myBtnContainer">
-  <button class="fa-solid fa-palette" onclick="filterSelection(
-  )"> Paintings</button>
-  <button class="fa-solid fa-person-walking" onclick="filterSelection('cars')"> Sculptures</button>
-  <button class="fa-solid fa-pencil" onclick="filterSelection('animals')"> Drawings</button>
-  <button class="fa-solid fa-whiskey-glass" onclick="filterSelection('fruits')"> Ceramics</button>
-  <button class="fa-solid fa-camera-retro" onclick="filterSelection('colors')"> Photography</button>
-  <button class="fa-solid fa-compass-drafting" onclick="filterSelection('colors')"> Crafts</button>
-</div>
-
   <div class="row row-cols-1 row-cols-md-4 g-4">
     <% @items.each do |item|%>
       <%= link_to item_path(item), class: "clickable-cards" do %>
